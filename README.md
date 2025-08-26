@@ -15,7 +15,7 @@ It’s a demonstration of how I approach building **scalable, AI-powered solutio
 
 ## 🔗 Demo
 
-[Live Demo Coming Soon]()
+[Live Demo: AI Travel Agent](https://ai-travel-agent-6es.pages.dev/)
 
 ## 🧳 What It Does
 
