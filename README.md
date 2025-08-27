@@ -16,6 +16,7 @@ It’s a demonstration of how I approach building **scalable, AI-powered solutio
 ## 🔗 Demo
 
 [Live Demo: AI Travel Agent](https://ai-travel-agent-6es.pages.dev/)
+[Cloudflare Worker Repop](https://github.com/ajkendal/ai-travel-agent-worker)
 
 ## 🧳 What It Does
 
