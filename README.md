@@ -47,9 +47,9 @@ The app collects key trip details — **number of travelers, departure and desti
 
 - Gathers trip details from users
 - Delivers tailored travel insights:
-- Weather at destinations
-- Flights with AI-generated notes
-- Hotels with short selection messages
+  - Weather at destinations
+  - Flights with AI-generated notes
+  - Hotels with short selection messages
 
 ## 🎯 Stretch Goals
 
