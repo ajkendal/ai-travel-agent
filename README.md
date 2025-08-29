@@ -46,9 +46,9 @@ Figma Design Files → [View here](https://www.figma.com/design/5bgAilardGm2CTSf
 
 - Gathers trip details from users
 - Delivers tailored travel insights:
-  - Weather at destinations
-  - Flights with AI-generated notes
-  - Hotels with short selection messages
+- Weather at destinations
+- Flights with AI-generated notes
+- Hotels with short selection messages
 
 ## 🎯 Stretch Goals
 
