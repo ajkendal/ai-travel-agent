@@ -30,6 +30,7 @@ The app collects key trip details — **number of travelers, departure and desti
 
 - [Original Figma Design Files](https://www.figma.com/design/5bgAilardGm2CTSfwiD0ok/AI-Travel-Agent?node-id=0-1&t=eoiS0QS8IHdoQx7W-1)
 - [Redesined Figma Files](https://www.figma.com/design/Bbc4zZLCGwJU5nztv6Xi3K/AI-Travel-Agent---Amanda-J?node-id=0-1&t=Qp5mgoLRYQbHfuga-1)
+- [Icon Selection](https://www.figma.com/community/file/1059229179375580154)
 
 ## 🌦 APIs
 
