@@ -1,10 +1,13 @@
-import FormPage from './components/Form';
+import { useState } from 'react';
+
+import Header from './components/Header';
 
 function App() {
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <>
-      <h1>Starter pages</h1>
-      <FormPage />
+      <Header loaded={loaded} />
     </>
   );
 }

@@ -6,12 +6,7 @@ const FormPage = () => {
     console.log(response);
   };
 
-  return (
-    <>
-      <h1> Form Page</h1>
-      <button onClick={() => handleSubmit({})}>Submit</button>
-    </>
-  );
+  return <></>;
 };
 
 export default FormPage;
