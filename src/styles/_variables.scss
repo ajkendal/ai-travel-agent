@@ -1,0 +1,25 @@
+// Colors
+$primary-dark: #28282b;
+$primary-blue: #023347;
+$primary-white: #f7fcfe;
+$background-light: #f2ffff;
+$button-green: #4bdcb0;
+$nav-blue: #8cbfc7;
+$secondary-background: #bbf7f7;
+
+// For Hover States
+$darken-20: -20%;
+$lighten-20: 20%;
+
+// Breakpoints
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
+// Small devices
+@mixin sm {
+  @media (max-width: $screen-sm-min) {
+    @content;
+  }
+}

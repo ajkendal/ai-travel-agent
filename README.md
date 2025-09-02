@@ -16,7 +16,7 @@ It’s a demonstration of how I approach building **scalable, AI-powered solutio
 ## 🔗 Demo
 
 - [Live Demo: AI Travel Agent](https://ai-travel-agent-6es.pages.dev/)
-- [Cloudflare Worker Repop](https://github.com/ajkendal/ai-travel-agent-worker)
+- [Cloudflare Worker Repo](https://github.com/ajkendal/ai-travel-agent-worker)
 
 ## 🧳 What It Does
 
@@ -28,16 +28,18 @@ The app collects key trip details — **number of travelers, departure and desti
 
 ## 🎨 Design
 
-Figma Design Files → [View here](https://www.figma.com/design/5bgAilardGm2CTSfwiD0ok/AI-Travel-Agent?node-id=0-1&t=eoiS0QS8IHdoQx7W-1)
+- [Original Figma Design Files](https://www.figma.com/design/5bgAilardGm2CTSfwiD0ok/AI-Travel-Agent?node-id=0-1&t=eoiS0QS8IHdoQx7W-1)
+- [Redesined Figma Files](https://www.figma.com/design/Bbc4zZLCGwJU5nztv6Xi3K/AI-Travel-Agent---Amanda-J?node-id=0-1&t=Qp5mgoLRYQbHfuga-1)
+- [Icon Selection](https://www.figma.com/community/file/1059229179375580154)
 
 ## 🌦 APIs
 
-- [OpenWeather API](https://openweathermap.org/api) → real-time weather data
+- [OpenWeather API](https://openweathermap.org/api) → real-time weather data and geolocation
 - OpenAI → natural language responses & trip recommendations
 
 ## 🛠️ Tools & Technologies
 
-- **Frontend:** React.js, Vite, JavaScript, SCSS Modules
+- **Frontend:** React.js, Vite, TypeScript, SCSS Modules
 - **Backend & Deployment:** Cloudflare Workers & Pages
 - **Design & Collaboration:** Figma, GitHub
 - **APIs & AI:** OpenAI, Weather API
