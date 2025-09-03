@@ -54,9 +54,7 @@
       font-size: 18px;
     }
   }
-  input[type='date']::-webkit-calendar-picker-indicator {
-    display: none;
-  }
+
   input {
     background-color: $primary-white;
     border: 4px solid $primary-dark;

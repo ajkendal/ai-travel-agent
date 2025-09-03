@@ -9,8 +9,8 @@ import FormPage from './components/Form';
 function App() {
   const [loaded, setLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [returnedData, setReturnedData] = useState(null);
-  const [isOpen, setIsOpen] = useState(false);
+  const [returnedData, setReturnedData] = useState({});
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <>
@@ -25,13 +25,13 @@ function App() {
           />
         </div>
         <div className={styles['form-container-mobile']}>
-          {isOpen && (
+          <div style={{ display: isOpen ? 'block' : 'none' }}>
             <FormPage
               setReturnedData={setReturnedData}
               setIsLoading={setIsLoading}
               setLoaded={setLoaded}
             />
-          )}
+          </div>
 
           {isOpen ? (
             <span onClick={() => setIsOpen(false)}>
@@ -48,7 +48,7 @@ function App() {
             <LoadingIcon />
           </div>
         ) : loaded ? (
-          <div>{returnedData} Loaded Content</div>
+          <div> Loaded Content</div>
         ) : (
           <div className={styles['no-content']}>
             <MainLogo />

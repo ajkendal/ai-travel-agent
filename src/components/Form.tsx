@@ -13,11 +13,11 @@ const FormPage = (props: {
   setLoaded: (loaded: boolean) => void;
 }) => {
   const [formData, setFormData] = useState({
-    noTravelers: 1,
+    numberOfTravelers: 1,
     origin: '',
     destination: '',
-    departureDate: '',
-    returnDate: '',
+    startDate: '',
+    endDate: '',
     budget: 1000,
   });
   const currentDate = new Date().toISOString().split('T')[0];
@@ -48,46 +48,53 @@ const FormPage = (props: {
     },
   });
 
-  const handleSubmit = async (event: React.FormEvent, formData: any) => {
-    event.preventDefault();
-    props.setIsLoading(true);
+  const validateForm = () => {
+    let isValid = true;
 
-    if (formData.origin === '') {
+    if (!formData.origin) {
       setErrorOrigin(true);
+      isValid = false;
     }
-    if (formData.destination === '') {
+    if (!formData.destination) {
       setErrorDestination(true);
+      isValid = false;
     }
-    if (formData.departureDate === '') {
+    if (!formData.startDate) {
       setErrorDepartureDate(true);
+      isValid = false;
     }
-    if (formData.returnDate === '') {
+    if (!formData.endDate) {
       setErrorReturnDate(true);
+      isValid = false;
     }
-    if (
-      errorDepartureDate ||
-      errorDestination ||
-      errorOrigin ||
-      errorReturnDate
-    ) {
+
+    return isValid;
+  };
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+
+    if (validateForm()) {
+      submittedData();
+    }
+  };
+
+  const submittedData = async () => {
+    props.setIsLoading(true);
+    try {
+      const response = await fetchData(formData);
+
+      props.setReturnedData(response);
+      props.setLoaded(true);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    } finally {
       props.setIsLoading(false);
-      return;
     }
-
-    // try {
-    //   const response = await fetchData(formData);
-
-    //   props.setReturnedData(response);
-    //   props.setLoaded(true);
-    // } catch (error) {
-    //   console.error('Error fetching data:', error);
-    // } finally {
-    //   props.setIsLoading(false);
-    // }
   };
 
   return (
-    <form className={styles['form-container']}>
+    <form className={styles['form-container']} onSubmit={handleSubmit}>
       <div className={styles['input-container']}>
         <label htmlFor='noTravelers'>Number of Travelers:</label>
         <input
@@ -95,11 +102,11 @@ const FormPage = (props: {
           min='1'
           max='10'
           type='number'
-          value={formData.noTravelers}
+          value={formData.numberOfTravelers}
           onChange={(e) =>
             setFormData({
               ...formData,
-              noTravelers: Number(parseInt(e.target.value)),
+              numberOfTravelers: Number(parseInt(e.target.value)),
             })
           }
         />
@@ -145,10 +152,11 @@ const FormPage = (props: {
           <input
             className={`${errorDepartureDate ? styles['error'] : ''}`}
             type='date'
+            id='departureDate'
             min={currentDate}
-            value={formData.departureDate}
+            value={formData.startDate}
             onChange={(e) => {
-              setFormData({ ...formData, departureDate: e.target.value });
+              setFormData({ ...formData, startDate: e.target.value });
               setErrorDepartureDate(false);
             }}
           />
@@ -159,10 +167,11 @@ const FormPage = (props: {
           <input
             className={`${errorReturnDate ? styles['error'] : ''}`}
             type='date'
-            min={currentDate}
-            value={formData.returnDate}
+            id='returnDate'
+            min={formData.startDate || currentDate}
+            value={formData.endDate}
             onChange={(e) => {
-              setFormData({ ...formData, returnDate: e.target.value });
+              setFormData({ ...formData, endDate: e.target.value });
               setErrorReturnDate(false);
             }}
           />
@@ -183,11 +192,7 @@ const FormPage = (props: {
         />
       </div>
 
-      <button
-        type='button'
-        className='styled-button'
-        onClick={(event) => handleSubmit(event, formData)}
-      >
+      <button type='submit' className='styled-button'>
         Plan my Trip!
       </button>
     </form>
