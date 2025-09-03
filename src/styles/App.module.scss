@@ -1,0 +1,57 @@
+@use '_variables' as *;
+
+.app-container {
+  margin: 0 auto;
+  max-width: $screen-xl-min;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .form-container-mobile {
+    display: none;
+  }
+  .form-container-desktop {
+    display: block;
+    flex-basis: 40%;
+    margin-left: 1rem;
+  }
+
+  .form-container-mobile {
+    background-color: $nav-blue;
+    form {
+      width: 95%;
+      margin: 1rem auto;
+    }
+    svg {
+      display: block;
+      margin: 10px auto;
+      &:hover circle {
+        fill: lighten($primary-blue, $lighten-20);
+      }
+    }
+  }
+
+  @include sm {
+    flex-direction: column;
+    align-items: center;
+
+    .form-container-desktop {
+      display: none;
+    }
+
+    .form-container-mobile {
+      display: block;
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+.no-content {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-basis: 50%;
+}
