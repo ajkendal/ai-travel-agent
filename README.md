@@ -35,6 +35,7 @@ The app collects key trip details — **number of travelers, departure and desti
 ## 🌦 APIs
 
 - [OpenWeather API](https://openweathermap.org/api) → real-time weather data and geolocation
+- [Google Maps Places API](https://developers.google.com/maps/documentation/places/web-service/autocomplete) → Autocomplete for city names
 - OpenAI → natural language responses & trip recommendations
 
 ## 🛠️ Tools & Technologies
@@ -42,7 +43,7 @@ The app collects key trip details — **number of travelers, departure and desti
 - **Frontend:** React.js, Vite, TypeScript, SCSS Modules
 - **Backend & Deployment:** Cloudflare Workers & Pages
 - **Design & Collaboration:** Figma, GitHub
-- **APIs & AI:** OpenAI, Weather API
+- **APIs & AI:** OpenAI, Weather API, Google Maps
 
 ## 🚀 Core Features
 
