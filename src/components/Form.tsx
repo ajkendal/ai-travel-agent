@@ -4,9 +4,6 @@ import { usePlacesWidget } from 'react-google-autocomplete';
 import { useState } from 'react';
 import styles from '../styles/Form.module.scss';
 
-// Declare google as a global variable for TypeScript
-declare const google: any;
-
 const FormPage = (props: {
   setReturnedData: (data: any) => void;
   setIsLoading: (loading: boolean) => void;
