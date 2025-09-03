@@ -106,7 +106,7 @@ const FormPage = (props: {
           onChange={(e) =>
             setFormData({
               ...formData,
-              numberOfTravelers: Number(parseInt(e.target.value)),
+              numberOfTravelers: Number(e.target.value),
             })
           }
         />
