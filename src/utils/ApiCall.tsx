@@ -7,7 +7,6 @@ export async function fetchData(content?: any) {
       headers: {
         'Content-Type': 'application/json',
       },
-
       body: JSON.stringify(content),
     });
 
