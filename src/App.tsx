@@ -12,6 +12,7 @@ function App() {
   const [returnedData, setReturnedData] = useState({});
   const [isOpen, setIsOpen] = useState(true);
 
+  console.log('Returned Data:', returnedData);
   return (
     <>
       <Header loaded={loaded} />
