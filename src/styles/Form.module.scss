@@ -24,6 +24,7 @@
   align-items: center;
   gap: 10px;
   width: 100%;
+  box-sizing: border-box;
   label {
     float: left;
   }
@@ -71,6 +72,7 @@
       border-color: $button-green;
       outline: none;
     }
+
     @include sm {
       padding: 5px;
     }
