@@ -1,7 +1,7 @@
 import styles from '../styles/Header.module.scss';
 import { HeaderLogo } from '../assets/logos';
 
-const Header = (props: { loaded: boolean }) => {
+const Header = (props: { loaded: boolean; isLoading: boolean }) => {
   return (
     <header className={styles['header']}>
       <div className={styles['title-container']}>
@@ -9,7 +9,7 @@ const Header = (props: { loaded: boolean }) => {
           AI Travel Agent
           <hr />
         </h1>
-        {props.loaded && <HeaderLogo />}
+        {(props.loaded || props.isLoading) && <HeaderLogo />}
       </div>
     </header>
   );

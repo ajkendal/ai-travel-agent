@@ -11,7 +11,7 @@ const Results = (props: { returnedData: any; formData: any }) => {
     hotel_url,
     image,
     activities,
-  } = JSON.parse(props.returnedData);
+  } = props.returnedData;
 
   const formatDate = (dateString: string) => {
     const options: Intl.DateTimeFormatOptions = {
@@ -35,8 +35,8 @@ const Results = (props: { returnedData: any; formData: any }) => {
         </p>
 
         <img
-          src={image}
-          alt={props.formData.destination}
+          src={image.url}
+          alt={image.revised_prompt}
           onError={(e) => {
             e.currentTarget.style.display = 'none';
           }}

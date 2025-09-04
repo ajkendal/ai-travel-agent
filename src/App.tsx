@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-      <Header loaded={loaded} />
+      <Header loaded={loaded} isLoading={isLoading} />
 
       <div className={styles['app-container']}>
         <div className={styles['form-container-desktop']}>
