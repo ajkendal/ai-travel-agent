@@ -5,14 +5,22 @@ import styles from './styles/App.module.scss';
 import { MainLogo } from './assets/logos';
 import { LoadingIcon, CloseIcon, MenuIcon } from './assets/icons';
 import FormPage from './components/Form';
+import Results from './components/Results';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [returnedData, setReturnedData] = useState({});
   const [isOpen, setIsOpen] = useState(true);
+  const [formData, setFormData] = useState({
+    numberOfTravelers: 1,
+    origin: '',
+    destination: '',
+    startDate: '',
+    endDate: '',
+    budget: 1000,
+  });
 
-  console.log('Returned Data:', returnedData);
   return (
     <>
       <Header loaded={loaded} />
@@ -23,6 +31,8 @@ function App() {
             setReturnedData={setReturnedData}
             setIsLoading={setIsLoading}
             setLoaded={setLoaded}
+            formData={formData}
+            setFormData={setFormData}
           />
         </div>
         <div className={styles['form-container-mobile']}>
@@ -31,6 +41,8 @@ function App() {
               setReturnedData={setReturnedData}
               setIsLoading={setIsLoading}
               setLoaded={setLoaded}
+              formData={formData}
+              setFormData={setFormData}
             />
           </div>
 
@@ -49,7 +61,9 @@ function App() {
             <LoadingIcon />
           </div>
         ) : loaded ? (
-          <div> Loaded Content</div>
+          <div className={styles['results-container']}>
+            <Results formData={formData} returnedData={returnedData} />
+          </div>
         ) : (
           <div className={styles['no-content']}>
             <MainLogo />

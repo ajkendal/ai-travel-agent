@@ -1,5 +1,64 @@
 import type { JSX } from 'react';
 
+export const ReturnIcon = (iconString: string) => {
+  switch (iconString) {
+    case 'SevereThunderstorms':
+      return <SevereThunderstorms />;
+    case 'Hail':
+      return <Hail />;
+    case 'BlowingSnow':
+      return <BlowingSnow />;
+    case 'Wind':
+      return <Wind />;
+    case 'Snow':
+      return <Snow />;
+    case 'Sleet':
+      return <Sleet />;
+    case 'Blizzard':
+      return <Blizzard />;
+    case 'RainAndThunder':
+      return <RainAndThunder />;
+    case 'ScatteredThunderstorms':
+      return <ScatteredThunderstorms />;
+    case 'DrizzleNightTime':
+      return <DrizzleNightTime />;
+    case 'DrizzleDayTime':
+      return <DrizzleDayTime />;
+    case 'Drizzle':
+      return <Drizzle />;
+    case 'RainNightTime':
+      return <RainNightTime />;
+    case 'RainDayTime':
+      return <RainDayTime />;
+    case 'Rain':
+      return <Rain />;
+    case 'ScatteredShowersNightTime':
+      return <ScatteredShowersNightTime />;
+    case 'ScatteredShowersDayTime':
+      return <ScatteredShowersDayTime />;
+    case 'HeavyRain':
+      return <HeavyRain />;
+    case 'Humidity':
+      return <Humidity />;
+    case 'Fog':
+      return <Fog />;
+    case 'CloudyClearNightTime':
+      return <CloudyClearNightTime />;
+    case 'PartlyCloudyNightTime':
+      return <PartlyCloudyNightTime />;
+    case 'CloudyClearDayTime':
+      return <CloudyClearDayTime />;
+    case 'PartlyCloudyClearDayTime':
+      return <PartlyCloudyClearDayTime />;
+    case 'CloudyDayTime':
+      return <CloudyDayTime />;
+    case 'Sunny':
+      return <Sunny />;
+    case 'ClearNightTime':
+      return <ClearNightTime />;
+  }
+};
+
 export const SevereThunderstorms = (): JSX.Element => (
   <svg
     width='32'

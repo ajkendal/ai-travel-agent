@@ -1,0 +1,110 @@
+@use '_variables' as *;
+.results-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+
+.title {
+  font-family: 'Poetsen One', sans-serif;
+  font-size: 40px;
+  color: $primary-blue;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 10px;
+}
+.dates {
+  font-family: 'inter', sans-serif;
+  font-size: 20px;
+  color: $primary-dark;
+  text-align: center;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 5px;
+}
+.origin-destination {
+  font-family: 'inter', sans-serif;
+  font-size: 24px;
+  color: $primary-dark;
+  text-align: center;
+  font-weight: bold;
+  margin: 0;
+}
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  background-color: $secondary-background;
+  padding: 30px;
+  border-radius: 10px;
+  box-sizing: border-box;
+
+  @include sm {
+    width: 95%;
+  }
+  a {
+    margin-top: 10px;
+  }
+  img,
+  svg {
+    display: block;
+    margin: 0 auto;
+  }
+  img {
+    width: 50%;
+    border-radius: 10px;
+  }
+  img.error {
+    display: none;
+  }
+}
+
+.text {
+  text-align: center;
+  margin: 0;
+  font-family: 'inter', sans-serif;
+  font-size: 20px;
+  color: $primary-dark;
+}
+
+.activity {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+
+  @include sm {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    p:nth-child(odd) {
+      margin-top: 15px;
+    }
+  }
+}
+
+.name {
+  font-weight: bold;
+  text-align: right;
+}
+
+.name,
+.description {
+  flex-basis: 50%;
+  font-family: 'inter', sans-serif;
+  color: $primary-dark;
+  font-size: 20px;
+  margin: 0;
+
+  @include sm {
+    text-align: center;
+  }
+}

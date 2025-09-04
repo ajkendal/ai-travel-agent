@@ -18,6 +18,7 @@ html {
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
+  text-decoration: none;
 
   &:hover {
     background-color: color.scale($button-green, $lightness: $lighten-20);

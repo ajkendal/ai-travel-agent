@@ -9,14 +9,13 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 3rem;
 
   .form-container-mobile {
     display: none;
   }
   .form-container-desktop {
     display: block;
-    flex-basis: 40%;
-    margin-left: 1rem;
   }
 
   .form-container-mobile {
@@ -37,6 +36,7 @@
   @include sm {
     flex-direction: column;
     align-items: center;
+    gap: 2rem;
 
     .form-container-desktop {
       display: none;
@@ -54,5 +54,15 @@
   display: flex;
   justify-content: center;
   align-self: center;
-  flex-basis: 50%;
+  width: 100%;
+}
+
+.results-container {
+  display: flex;
+  justify-content: center;
+  align-self: flex-start;
+  margin: 20px 0;
+  @include sm {
+    margin-top: 0;
+  }
 }

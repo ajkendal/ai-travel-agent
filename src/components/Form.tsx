@@ -8,15 +8,9 @@ const FormPage = (props: {
   setReturnedData: (data: any) => void;
   setIsLoading: (loading: boolean) => void;
   setLoaded: (loaded: boolean) => void;
+  formData: any;
+  setFormData: (data: any) => void;
 }) => {
-  const [formData, setFormData] = useState({
-    numberOfTravelers: 1,
-    origin: '',
-    destination: '',
-    startDate: '',
-    endDate: '',
-    budget: 1000,
-  });
   const currentDate = new Date().toISOString().split('T')[0];
   const [errorOrigin, setErrorOrigin] = useState(false);
   const [errorDestination, setErrorDestination] = useState(false);
@@ -30,7 +24,7 @@ const FormPage = (props: {
       types: ['(cities)'],
     },
     onPlaceSelected: (place: any) => {
-      setFormData({ ...formData, origin: place.formatted_address });
+      props.setFormData({ ...props.formData, origin: place.formatted_address });
     },
   });
 
@@ -41,26 +35,29 @@ const FormPage = (props: {
       types: ['(cities)'],
     },
     onPlaceSelected: (place: any) => {
-      setFormData({ ...formData, destination: place.formatted_address });
+      props.setFormData({
+        ...props.formData,
+        destination: place.formatted_address,
+      });
     },
   });
 
   const validateForm = () => {
     let isValid = true;
 
-    if (!formData.origin) {
+    if (!props.formData.origin) {
       setErrorOrigin(true);
       isValid = false;
     }
-    if (!formData.destination) {
+    if (!props.formData.destination) {
       setErrorDestination(true);
       isValid = false;
     }
-    if (!formData.startDate) {
+    if (!props.formData.startDate) {
       setErrorDepartureDate(true);
       isValid = false;
     }
-    if (!formData.endDate) {
+    if (!props.formData.endDate) {
       setErrorReturnDate(true);
       isValid = false;
     }
@@ -79,7 +76,7 @@ const FormPage = (props: {
   const submittedData = async () => {
     props.setIsLoading(true);
     try {
-      const response = await fetchData(formData);
+      const response = await fetchData(props.formData);
 
       props.setReturnedData(response);
       props.setLoaded(true);
@@ -99,10 +96,10 @@ const FormPage = (props: {
           min='1'
           max='10'
           type='number'
-          value={formData.numberOfTravelers}
+          value={props.formData.numberOfTravelers}
           onChange={(e) =>
-            setFormData({
-              ...formData,
+            props.setFormData({
+              ...props.formData,
               numberOfTravelers: Number(e.target.value),
             })
           }
@@ -117,9 +114,9 @@ const FormPage = (props: {
           id='origin'
           type='text'
           placeholder='New York, NY'
-          value={formData.origin}
+          value={props.formData.origin}
           onChange={(e) => {
-            setFormData({ ...formData, origin: e.target.value });
+            props.setFormData({ ...props.formData, origin: e.target.value });
             setErrorOrigin(false);
           }}
         />
@@ -133,9 +130,12 @@ const FormPage = (props: {
           id='destination'
           type='text'
           placeholder='Paris, France'
-          value={formData.destination}
+          value={props.formData.destination}
           onChange={(e) => {
-            setFormData({ ...formData, destination: e.target.value });
+            props.setFormData({
+              ...props.formData,
+              destination: e.target.value,
+            });
             setErrorDestination(false);
           }}
         />
@@ -151,9 +151,12 @@ const FormPage = (props: {
             type='date'
             id='departureDate'
             min={currentDate}
-            value={formData.startDate}
+            value={props.formData.startDate}
             onChange={(e) => {
-              setFormData({ ...formData, startDate: e.target.value });
+              props.setFormData({
+                ...props.formData,
+                startDate: e.target.value,
+              });
               setErrorDepartureDate(false);
             }}
           />
@@ -165,10 +168,10 @@ const FormPage = (props: {
             className={`${errorReturnDate ? styles['error'] : ''}`}
             type='date'
             id='returnDate'
-            min={formData.startDate || currentDate}
-            value={formData.endDate}
+            min={props.formData.startDate || currentDate}
+            value={props.formData.endDate}
             onChange={(e) => {
-              setFormData({ ...formData, endDate: e.target.value });
+              props.setFormData({ ...props.formData, endDate: e.target.value });
               setErrorReturnDate(false);
             }}
           />
@@ -182,9 +185,12 @@ const FormPage = (props: {
           min='100'
           step={10}
           type='number'
-          value={formData.budget}
+          value={props.formData.budget}
           onChange={(e) =>
-            setFormData({ ...formData, budget: Number(e.target.value) })
+            props.setFormData({
+              ...props.formData,
+              budget: Number(e.target.value),
+            })
           }
         />
       </div>
