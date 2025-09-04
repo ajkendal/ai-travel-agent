@@ -105,7 +105,6 @@ const FormPage = (props: {
           }
         />
       </div>
-
       <div className={styles['input-container']}>
         <label htmlFor='origin'>Flying from:</label>
         <input
@@ -140,7 +139,6 @@ const FormPage = (props: {
           }}
         />
       </div>
-
       <div
         className={`${styles['input-container']} ${styles['date-input-container']}`}
       >
@@ -177,7 +175,6 @@ const FormPage = (props: {
           />
         </div>
       </div>
-
       <div className={`${styles['money-input']} ${styles['input-container']}`}>
         <label htmlFor='budget'>Budget $:</label>
         <input
@@ -194,7 +191,6 @@ const FormPage = (props: {
           }
         />
       </div>
-
       <button type='submit' className='styled-button'>
         Plan my Trip!
       </button>

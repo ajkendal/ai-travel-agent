@@ -13,12 +13,22 @@ const Results = (props: { returnedData: any; formData: any }) => {
     activities,
   } = JSON.parse(props.returnedData);
 
+  const formatDate = (dateString: string) => {
+    const options: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+  };
+
   return (
     <div className={styles['results-container']}>
       <div className={styles['content-container']}>
         <h4 className={styles['title']}>Your Trip</h4>
         <p className={styles['dates']}>
-          {props.formData.startDate} to {props.formData.endDate}
+          {formatDate(props.formData.startDate)} to{' '}
+          {formatDate(props.formData.endDate)}
         </p>
         <p className={styles['origin-destination']}>
           {props.formData.origin} → {props.formData.destination}
