@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use '_variables' as *;
 
 .app-container {
@@ -28,7 +29,7 @@
       display: block;
       margin: 10px auto;
       &:hover circle {
-        fill: lighten($primary-blue, $lighten-20);
+        fill: color.scale($primary-blue, $lightness: $lighten-20);
       }
     }
   }
