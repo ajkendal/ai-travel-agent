@@ -56,6 +56,8 @@ export const ReturnIcon = (iconString: string) => {
       return <Sunny />;
     case 'ClearNightTime':
       return <ClearNightTime />;
+    default:
+      return <PartlyCloudyClearDayTime />;
   }
 };
 
