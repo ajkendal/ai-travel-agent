@@ -35,8 +35,8 @@ const Results = (props: { returnedData: any; formData: any }) => {
         </p>
 
         <img
-          src={image.url}
-          alt={image.revised_prompt}
+          src={image?.url}
+          alt={image?.revised_prompt}
           onError={(e) => {
             e.currentTarget.style.display = 'none';
           }}
